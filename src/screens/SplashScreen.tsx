@@ -2,12 +2,13 @@ import { View, Image, StyleSheet, StatusBar } from 'react-native'
 import React, { useEffect } from 'react'
 import image from '~/assets/image';
 import { Colors } from '~/style';
+import { navigate } from '~/navigation/Methods';
 
 export default function SplashScreen() {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            // navigation.navigate('HomeStack')
+            navigate('TabNavigator')
         }, 2000);
     }, []);
 
