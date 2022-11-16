@@ -1,9 +1,17 @@
 
 import {MainStackParamList} from './MainStack';
 import {TabNavigatorStackParamList} from './TabNavigator';
+import {CartStackParamList} from './CartStack';
+import {HomeStackParamList} from './HomeStack';
+import {AuthStackParamList} from './AuthStack';
+import {OrdersStackParamList} from './OrdersStack';
 export type RootStackParamList = 
 MainStackParamList&
-  TabNavigatorStackParamList
+  TabNavigatorStackParamList&
+  HomeStackParamList&
+  AuthStackParamList&
+  OrdersStackParamList&
+  CartStackParamList
 
 
   declare global {
