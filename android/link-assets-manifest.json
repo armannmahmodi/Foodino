@@ -2,12 +2,12 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/fontFamily.ts",
+      "path": "src/assets/fonts/index.ts",
       "sha1": "c7ef8bad466f277936717102f83de56f4f1c7e62"
     },
     {
-      "path": "src/assets/fonts/index.ts",
-      "sha1": "a845bc6e2e6231686fdd7220799b731938a57d2c"
+      "path": "src/assets/fonts/IRANSansMedium.ttf",
+      "sha1": "5dc859d9baa997f743030d5c5bdcf58545ae0db8"
     },
     {
       "path": "src/assets/fonts/Roboto-Black.ttf",
