@@ -1,10 +1,19 @@
-import { View, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import React from 'react';
-
+import { NavigationContainer } from '@react-navigation/native';
+import HomeStack from '~/navigation/MainStack';
+import { NativeBaseProvider } from 'native-base';
+import { navigationRef } from '~/navigation/Methods';
 export default function App() {
+
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <NativeBaseProvider >
+        <NavigationContainer ref={navigationRef}>
+          <HomeStack />
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </SafeAreaView>
   );
 }
+
