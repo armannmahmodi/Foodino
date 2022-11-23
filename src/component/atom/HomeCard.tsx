@@ -3,11 +3,12 @@ import { Text, TouchableOpacity, StyleSheet, View } from 'react-native'
 import { Image } from 'native-base';
 import image from '~/assets/image';
 import { fontFamily } from '~/utils/Style';
+import { navigate } from '~/navigation/Methods';
 
 export default function HomeCard() {
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => { }} style={styles.touchableOpacity} >
+            <TouchableOpacity onPress={() => navigate('FoodMenuScreen')} style={styles.touchableOpacity} >
                 <Image source={image.pizza} w='100%' h='100%' alt="image" alignSelf='center' borderRadius='20' />
             </TouchableOpacity >
             <Text style={styles.textCard}>Burgers Story</Text>

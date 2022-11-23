@@ -39,6 +39,7 @@ const fontFamily = {
   medium: 'Roboto-Medium',
   bold: 'Roboto-Bold',
   thin: 'Roboto-Thin',
+  number:'IRANSansMedium'
 };
 
 export {
