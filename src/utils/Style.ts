@@ -34,11 +34,11 @@ const fontWeight = {
 };
 
 const fontFamily = {
-  light: 'ROBOTO-Light',
-  regular: 'ROBOTO-Regular',
-  medium: 'ROBOTO-Medium',
-  bold: 'ROBOTO-Bold',
-  thin: 'ROBOTO-Thin',
+  light: 'Roboto-Light',
+  regular: 'Roboto-Regular',
+  medium: 'Roboto-Medium',
+  bold: 'Roboto-Bold',
+  thin: 'Roboto-Thin',
 };
 
 export {
