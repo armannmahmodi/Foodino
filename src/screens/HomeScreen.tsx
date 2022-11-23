@@ -1,34 +1,33 @@
-import { View, FlatList, StyleSheet } from 'react-native'
-import React from 'react'
-import { HomeCard, AppBar } from '~/component';
-import { Colors } from '~/style'
-import { navigate } from '~/navigation/Methods';
-const renderItem = () => {
+import React from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { AppBar, HomeCard } from '~/component';
+import { getFoodGrouping } from '~/hooks';
+
+const renderItem = ({ item }: { item: any }) => {
     return (
-        <HomeCard />
+        <HomeCard item={item} />
     )
 }
-const item = [{ id: 1 }, { id: 1 }, { id: 1 }, { id: 1 }, { id: 1 }, { id: 1 }, { id: 1 }, { id: 1 }]
 export default function Home() {
-    return (
 
+    const { data } = getFoodGrouping();
+    const item = data?.data
+
+    return (
         <View style={styles.container} >
             <AppBar title='صفحه اصلی' icon='home' />
             <View style={styles.flatList}>
                 <FlatList
                     showsVerticalScrollIndicator={false}
-                    // columnWrapperStyle={{ flexDirection: 'row-reverse' }}
                     contentContainerStyle={{
                         alignSelf: 'center',
                     }}
-                    // numColumns={2}
                     data={item}
                     keyExtractor={(_, index) => `itm${index}`}
                     renderItem={renderItem}
                 />
             </View>
         </View>
-
     )
 }
 const styles = StyleSheet.create({
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
 
     },
     flatList: {
-        paddingBottom: 70,
-        paddingTop: 10
+        paddingBottom: 90,
+        paddingTop: 15
     }
 });
