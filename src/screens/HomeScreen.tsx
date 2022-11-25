@@ -1,17 +1,20 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { AppBar, HomeCard } from '~/component';
-import { getFoodGrouping } from '~/hooks';
+import { useFoodCategory } from '~/hooks';
 
-const renderItem = ({ item }: { item: any }) => {
-    return (
-        <HomeCard item={item} />
-    )
-}
+
 export default function Home() {
 
-    const { data } = getFoodGrouping();
+    const { data } = useFoodCategory();
     const item = data?.data
+
+
+    const renderItem = ({ item }: { item: any }) => {
+        return (
+            <HomeCard item={item} />
+        )
+    }
 
     return (
         <View style={styles.container} >
