@@ -1,7 +1,7 @@
-import React from 'react'
-import { Text, TouchableOpacity, StyleSheet, View, Image } from 'react-native'
-import { fontFamily } from '~/utils/Style';
+import React from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { navigate } from '~/navigation/Methods';
+import { fontFamily } from '~/utils/Style';
 
 export default function HomeCard({ item }: { item: any }) {
     let subset = item?.subset
