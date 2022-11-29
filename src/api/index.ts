@@ -1,15 +1,18 @@
 import axios from 'axios';
 export const apiConfig = {
+    
     tools: 'tools',
-    baseUrl: 'https://637b3f866f4024eac20819cd.mockapi.io/',
+    baseUrl: 'https://637b3f866f4024eac20819cd.mockapi.io',
     timeout: 1000,
 }
 
 const instance = axios.create({
     baseURL: apiConfig.baseUrl,
     timeout: apiConfig.timeout,
-     headers: { }
-}); 
+    headers: { 
+        'Content-Type': 'application/json'
+      },
+    }); 
 export default instance;
 
 export const getFoodCategory = async () => {
@@ -34,11 +37,12 @@ export const getFoodList = async (subset:any) => {
 }
 
 export const postFoodCart=async(item:any)=>{
+
     console.log('item in api>>>>',item)
     const data=await instance({
         url: `food_cart`,
-        method:'post',
-        params:{
+        method:'put',
+        data:{
             id_food:item?.id,
             name:item?.name,
             subset:item?.subset,
@@ -49,14 +53,19 @@ export const postFoodCart=async(item:any)=>{
     return data;
 }
 
-export const updateFoodList = async () => {
+export const updateNumber = async (item:any) => {
 
+  const url=`food_list/${item.id}`
+  const number=item.number
+  const order=number > 0 ? true : false;
+  console.log({url,number,order})
     const result = await instance({
-        url: `food_list`,
+        url: url,
         method:'put',
-        params:{         
-             order:'true'
-                }
+        data:{
+            number:number,
+            order:order
+        }  
     })
     return result;
 }
